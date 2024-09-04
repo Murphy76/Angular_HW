@@ -1,0 +1,9 @@
+<p>dropdown-list works!</p>
+<div>
+    <select  #currency (change)="onSelected(currency.value)" placeholder="Select Currency:">
+        @for (currency of currencyData; track currency;  let idx = $index) {
+        <option>{{currency}}</option>
+        }
+
+    </select>
+</div>
