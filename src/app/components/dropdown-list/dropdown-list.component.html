@@ -1,9 +1,11 @@
 <p>dropdown-list works!</p>
 <div>
-    <select  #currency (change)="onSelected(currency.value)" placeholder="Select Currency:">
-        @for (currency of currencyData; track currency;  let idx = $index) {
-        <option>{{currency}}</option>
-        }
-
+    <select  (change)="onChange($event)" placeholder="Select Currency:">
+        <!-- @for (currency of currencyData; track currency;  let idx = $index) { -->
+         <option selected="false">Select currency</option>
+        <option *ngFor="let currency of currencyData" [value]=[currency]>{{currency}}</option>
+        <!-- <option *ngFor="let curr of currencyData" [value]={{curr}}>
+            {{curr}}
+      </option> -->
     </select>
 </div>
